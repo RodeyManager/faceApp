@@ -1,0 +1,67 @@
+/*
+ * UTF-8  by project stylesheet.
+ *  Rodey
+ * Date: 2015-5-15 23:03:27
+ */
+
+*{margin: 0; padding: 0;-webkit-box-sizing: border-box;}
+html, body{ height: 100%; font-family: 'microsoft yahei'; }
+#imgUrl{
+    display: block;
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgba(200,200,200,1);
+    border-radius: 5px;
+    color: rgb(60,60,60);
+    margin: 20px auto;
+    padding: 5px;
+}
+#box, #response {
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+#response {
+    display: block;
+    min-height: 30px;
+    line-height: 30px;
+    margin-bottom: 20;
+    color: rgba(197, 55, 216, .8);
+}
+
+#box img {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    outline: none;
+}
+
+#box span {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    border: solid 4px rgba(197, 55, 216, .8);
+}
+
+#start {
+    display: block;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #2F88BF;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 30px;
+    cursor: pointer;
+    font-family: "microsoft yahei";
+}
+#start:hover{ background-color: #1F66B0; }
