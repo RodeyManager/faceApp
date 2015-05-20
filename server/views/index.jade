@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    h1= title
+    .imgBox
+        img#result-img(src='')
+
+      form(action='/detech', method='post')
+          input#file(type='file', name='file')
+          input#detechBtn(type='button', name='detechBtn', value='开始识别')
