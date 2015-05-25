@@ -7,6 +7,11 @@
 var apiKey = 'fae0d64949e418ec234978a31b80ab97';
 var apiSecret = 'uj70xIv-OvtB6TkLBCLzhtUfxiiXbSEF';
 var RE_TRIM = /^\/+|\/+$/g;
+var apiUrl = 'https://apicn.faceplusplus.com/v2/';
+
+var apis = {
+    detech: apiUrl + 'detection/detect'
+};
 
 function getDefaultConfig(){
 

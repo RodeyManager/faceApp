@@ -14,11 +14,16 @@ $(function(){
 
     var fileDom = $('#file'),
         resultDom = $('#result-img'),
-        imgData;
+        imgData, imgProps;
 
     //选择图片后将图片按照正常比例压缩输出 Convert Image
     fileDom.on('change', readFile, false);
 
+    /**
+     * 读取上传的图片, 并以base64数据上传至 server
+     * @param evt
+     * @returns {boolean}
+     */
     function readFile(evt){
 
         var file = this.files[0];
@@ -33,13 +38,17 @@ $(function(){
             if(this.result){
                 imgData = this.result;
                 //resultDom.attr('src', imgData);
-                console.log(this.result);
                 convertImageServer(imgData, file);
             }
         };
 
     }
 
+    /**
+     * 处理上传的图片, 返回处理后的结果
+     * @param imgData
+     * @param file
+     */
     function convertImageServer(imgData, file){
         var postData = { imgData: imgData, file: JSON.stringify(file) };
         $.ajax({
@@ -49,21 +58,39 @@ $(function(){
             dataType: 'json',
             success: function(res){
                 console.log(res);
-                resultDom.attr('src', res.dt);
+                if(res.code == 200){
+                    resultDom.attr('src', res.dt);
+                    imgProps = res.params;
+                }
             },
             error: function(err){
-                alert('图片上传失败!');
+                alert('图片上传失败, 请重试');
             }
         });
 
     }
 
 
+    /**
+     * 开始识别
+     */
 
+    $('#detechBtn').click(function(){
 
-    $('detechBtn').click(function(){
+        var postData = { imgUrl: location.href + resultDom.attr('src') };
+        $.ajax({
+            url: apis.detech,
+            data: postData,
+            type: 'POST',
+            dataType: 'json',
+            success: function(res){
+                console.log(res);
+            },
+            error: function(xhr, err){
+                alert('识别失败, 请重试');
+            }
+        });
 
-        //将图片数据以base64数据上传
 
 
     });

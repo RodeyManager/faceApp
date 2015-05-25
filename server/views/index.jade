@@ -5,6 +5,7 @@ block content
     h1= title
     .imgBox
         img#result-img(src='')
+        i#loading-icon
 
       form(action='/detech', method='post')
           input#file(type='file', name='file')

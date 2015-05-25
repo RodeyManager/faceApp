@@ -7,7 +7,7 @@ body {
   font: 14px "microsoft yahei", Helvetica, Arial, sans-serif;
 }
 *{
-    -webkit-box-sizing: border-box;
+    -webkit-box-sizing: content-box;
 }
 
 a {
@@ -58,5 +58,9 @@ input#detechBtn:hover{
     margin: 0 auto;
     outline: none;
     background-color: rgba(235, 235, 235, .8);
+}
+.imgBox i{
+    display: block;
+    background: ;
 }
 
