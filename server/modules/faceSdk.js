@@ -62,3 +62,4 @@ function getConfig(){
 exports.getApiConfig = getApiConfig;
 exports.getDefaultConfig = getDefaultConfig;
 exports.getConfig  = getConfig;
+exports.apis = apis;

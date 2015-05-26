@@ -87,7 +87,7 @@ window.onload = function(){
             var pose = attribute.pose;
 
             var span = document.createElement('span');
-            span.setAttributeNode('class', 'temp');
+            span.setAttribute('class', 'temp');
 
             //Math.round((d.position.center.x - d.position.width / 2) * a.width * 0.01),
             span.style.width = Math.round(w * .01 * imgW) + 'px';

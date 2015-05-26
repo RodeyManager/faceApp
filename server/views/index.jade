@@ -3,9 +3,10 @@ extends layout
 block content
   .container
     h1= title
-    .imgBox
+    .imgBox#img-box
         img#result-img(src='')
-        i#loading-icon
+        i#loading-icon(style="display:none;")
+        span
 
       form(action='/detech', method='post')
           input#file(type='file', name='file')
