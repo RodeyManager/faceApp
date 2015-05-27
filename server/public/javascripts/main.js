@@ -28,11 +28,12 @@ $(function(){
      */
     function readFile(evt){
 
+        //获取图片
+        var file = this.files[0];
+        if(!file) return;
         //先清楚之前的span
         imgBox.find('div.temp').remove();
         resultDom.removeAttr('src');
-        //获取图片
-        var file = this.files[0];
         //这里我们判断下类型如果不是图片就返回 去掉就可以上传任意文件
         if(!/image\/\w+/.test(file.type)){
             errorHandler(null, null, "请确保文件为图像类型");
